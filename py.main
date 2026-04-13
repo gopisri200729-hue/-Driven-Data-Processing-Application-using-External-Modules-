@@ -1,0 +1,67 @@
+1. Project Title  
+File-Driven Data Processing Application using External Modules in Python  
+2. Problem Statement  
+To design and implement a file-driven application that reads data from a file, processes it using 
+external modules, and generates useful output. The system should demonstrate modular 
+programming and file handling techniques.  
+3. Objective  
+• To understand file handling in Python  
+• To use external modules for modular programming • To process and analyze data from files • 
+To improve code reusability and organization  
+• To handle real-world data efficiently  
+4. Tools Used  
+• Python 3  
+• VS Code / IDLE  
+• External Modules (custom Python files)  
+5. Description  
+This project implements a File-Driven Data Processing Application using Python. The system 
+reads data from a file (e.g., student marks or sales data), processes it using functions defined in 
+external modules, and displays results such as totals, averages, or filtered data.  
+The use of external modules improves code organization and reusability.  
+6. Algorithm  
+• Start the program  
+• Read data from file  
+• Import external module  
+• Process data (calculate total, average)  
+• Display results  
+• End program  
+7.Program (Python Code)  
+Step 1: Create data file (data.txt)  
+gopisri,85  
+John,78 Anu,92  
+Step 2: External Module (processor.py)  
+def calculate_average(data):     
+total = 0     for item in data:         
+total += item[1]  
+return total / len(data)  
+def find_topper(data):     
+return 
+max(data, key=lambda x: x[1])  
+Step 3: Main Program (main.py)  
+import processor  
+def read_file():     data = []
+open("data.txt", "r") as file:         
+for line in file:  
+     with 
+name, marks = line.strip().split(",")             
+data.append((name, int(marks)))  
+return data  
+def display_data(data):     
+print("\nStudent Data:")  
+   for 
+name, marks in data:         
+print(name, "-", marks)  
+def main():  
+data = read_file()  
+display_data(data)  
+avg = processor.calculate_average(data)     
+topper = processor.find_topper(data)  
+print("\nAverage Marks:", avg)  
+print("Topper:", topper[0], "-", topper[1])  
+main()   
+9.Result  
+The File-Driven Data Processing Application was successfully developed using Python. The 
+program reads data from a file, processes it using external modules, and produces accurate results.  
+10.Conclusion  
+This project demonstrates the importance of file handling and modular programming. It improves 
+code organization, reusability, and efficiency in handling real-world data processing tasks.  
